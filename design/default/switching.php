@@ -48,6 +48,14 @@ switch($_GET['view']) {
 		include ("design/".$_CONFIG['templ']['main']."/block_design_dataproduk.php");
 	break;
 	
+	case "editproduk":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_editproduk.php");
+	break;
+	
+	case "editprodukupdate":
+		include ("application/app_editprodukupdate.php");
+	break;
+	
 	case "uploadimage":
 		include ("design/".$_CONFIG['templ']['main']."/block_design_uploadimage.php");
 	break;

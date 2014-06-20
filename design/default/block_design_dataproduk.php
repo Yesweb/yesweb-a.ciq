@@ -10,7 +10,7 @@
 	while($data_prodlist = $prodlist->FetchRow()) {
 ?>
 			<li class="listprod">
-				<a href="#">
+				<a href="index.php?view=editproduk&id=<?=$data_prodlist['id_produk'];?>">
 					<img src="uploads/thumb/<?=$data_prodlist['image'];?>" class="ui-li-thumb">
 					<h2 style="line-height:40px; margin-bottom:0px;"><?=$data_prodlist['title'];?></h2>
 					<p style="margin-top:0px;"><?=$data_prodlist['description'];?></p>
