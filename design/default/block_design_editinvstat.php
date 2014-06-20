@@ -25,7 +25,7 @@ $invstat = $_GET['stat'];
 		$statid = $data_terblist['invoice_status'];
 	}
 ?>
-			<input type="text" name="terbilang" id="terbilang" value="<?=$terbilang?>" data-clear-btn="true">
+			<textarea cols="40" rows="8" name="description" id="textarea2"><?=$terbilang?></textarea>
 		</li>
 		<li class="ui-field-contain">
 			<label for="noinv">Status Invoice:</label>
