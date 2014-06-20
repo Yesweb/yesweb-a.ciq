@@ -1,0 +1,45 @@
+/* #Custom style
+================================================== */
+.content p {
+	font-size: 12px;
+	line-height: 17px;
+}
+.lineheight16 h2 {
+	line-height: 18px;
+}
+.listprod img {
+	top:25% !important;
+}
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+		.margintop08 {
+			margin-top:8px;
+		}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+		.margintop08 {
+			margin-top:8px;
+		}
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		.margintop08 {
+			margin-top:8px;
+		}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+		.margintop08 {
+			margin-top:8px !important;
+		}
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+		.margintop08 {
+			margin-top:8px !important;
+		}
+	}

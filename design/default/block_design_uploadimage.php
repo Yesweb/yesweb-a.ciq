@@ -1,0 +1,1 @@
+<form action="index.php?view=uploaded" method="post" enctype="multipart/form-data" data-ajax="false">	<input type="file" name="file" id="file">	<input type="submit" value="submit" name="submit"></form>

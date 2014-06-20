@@ -1,0 +1,83 @@
+body {
+	font-family:Calibri, Arial;
+	color:#094a93;
+	margin: 0px;
+	background: #dddddd;
+}
+.container {
+	width: 960px;
+	border: 0px solid red;
+	background: #d8d8d8;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+}
+.containerprint {
+	border: 0px solid red;
+	background: #ffffff;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+}
+.left {
+	width:650px;
+	background: #ffffff;
+	float:left;
+	border:solid 0px red;
+}
+.right {
+	width:300px;
+	float:right;
+	border:solid 0px red;
+}
+.table {
+	border:solid 1px #094a93;
+}
+.tablehead {
+	font-weight:bold;
+	font-size:12px;
+	text-align:center;
+}
+.tablecont {
+	font-size:12px;
+	text-align:center;
+}
+.default {
+	font-size:12px;
+}
+.logo{
+	width:150px;
+	height:auto;
+}
+.menu {
+	padding:20px;
+}
+.imgkarya {
+	width:100px;
+	height:auto;
+}
+.print {
+	display:block;
+	width:auto;
+	height:30px;
+	border:solid 1px #094a93;
+	text-align:center;
+	padding:4px;
+}
+.nonprint {
+	display:block;
+	color:grey;
+	width:auto;
+	height:30px;
+	border:solid 1px #094a93;
+	text-align:center;
+	text-decoration:none;
+	padding:4px;
+}
+.container:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}

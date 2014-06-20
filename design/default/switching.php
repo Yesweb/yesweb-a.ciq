@@ -1,0 +1,161 @@
+<?php
+include ("lib/back.php");
+include ("application/app_set_param.php");
+
+$stat = $db->Execute("SELECT permit FROM user WHERE username='$usern'");
+while($data_termstat = $stat->FetchRow()) {
+	$cek_termstat = $data_termstat['permit'];
+}
+
+switch($_GET['view']) {
+	case "":
+		echo "<h1 style='text-align:center;'>yesweb.co.id</h1>";
+	break;
+	
+	case "inputpemesanan1":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_inputpemesanan_01.php");
+	break;
+	
+	case "inputpemesanan2":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_inputpemesanan_02.php");
+	break;
+	
+	case "inputpemesananinsert":
+		include ("application/app_inputpemesanan.php");
+	break;
+	
+	case "datapemesanan":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_datapemesanan.php");
+	break;
+	
+	case "inputinv":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_inputinv.php");
+	break;
+	
+	case "inputinvedit":
+		include ("application/app_inputinvedit.php");
+	break;
+	
+	case "inputproduk":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_inputproduk.php");
+	break;
+	
+	case "inputprodukinsert":
+		include ("application/app_upload.php");
+	break;
+	
+	case "dataproduk":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_dataproduk.php");
+	break;
+	
+	case "uploadimage":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_uploadimage.php");
+	break;
+	
+	case "uploaded":
+		include ("application/app_upload.php");
+	break;
+	
+	case "perinv":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_perinv.php");
+	break;
+	
+	case "addperinv":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_addperinv.php");
+	break;
+	
+	case "addperinvinsert":
+		include ("application/app_uploadper.php");
+	break;
+	
+	case "datainvoice":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_datainvoice.php");
+	break;
+	
+	case "addinvoice":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_addinvoice.php");
+	break;
+	
+	case "addinvoiceinsert":
+		include ("application/app_addinvoice.php");
+	break;
+	
+	case "editinvstat":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_editinvstat.php");
+	break;
+	
+	case "editinvstatinset":
+		include ("application/app_editinvstat.php");
+	break;
+	
+	case "editkwi":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_editkwi.php");
+	break;
+	
+	case "editkwiinsert":
+		include ("application/app_editkwiinsert.php");
+	break;
+	
+	case "inputkolektor":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_inputkolektor.php");
+	break;
+	
+	case "inputkolektorinsert":
+		include ("application/app_inputkolektor.php");
+	break;
+	
+	case "datakolektor":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_datakolektor.php");
+	break;
+	
+	case "inputsup":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_inputsup.php");
+	break;
+	
+	case "inputsupinsert":
+		include ("application/app_inputsup.php");
+	break;
+	
+	case "datasup":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_datasup.php");
+	break;
+	
+	//Modul user manager
+	case "user";
+		include ("application/_usermanager/user.php");
+	break;
+	
+	case "adduser":
+		include ("application/_usermanager/adduser.php");
+	break;
+	
+	case "adduserinsert":
+		include ("application/_usermanager/adduserinsert.php");
+	break;
+	
+	case "group":
+		include ("application/_usermanager/group.php");
+	break;
+	
+	case "addgroup":
+		include ("application/_usermanager/addgroup.php");
+	break;
+	
+	case "addgroupinsert":
+		include ("application/_usermanager/addgroupinsert.php");
+	break;
+	
+	case "groupmanage":
+		include ("application/_usermanager/groupmanage.php");
+	break;
+	
+	case "deletegroupmenu":
+		include ("application/_usermanager/deletegroupmenu.php");
+	break;
+	
+	case "menuadd":
+		include ("application/_usermanager/menuadd.php");
+	break;
+
+}
+?>
