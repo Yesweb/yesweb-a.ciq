@@ -10,19 +10,19 @@
 	while($data_prodlist = $prodlist->FetchRow()) {
 ?>
 			<li class="listprod">
-				<a href="index.php?view=editproduk&id=<?=$data_prodlist['id_produk'];?>">
 					<img src="uploads/thumb/<?=$data_prodlist['image'];?>" class="ui-li-thumb">
 					<h2 style="line-height:40px; margin-bottom:0px;"><?=$data_prodlist['title'];?></h2>
-					<p style="margin-top:0px;"><?=$data_prodlist['description'];?></p>
+					<p style="margin-top:0px;">
+						<?=$data_prodlist['description'];?>
+						<div>
+						<a href="index.php?view=deleteproduk01&id=<?=$data_prodlist['id_produk'];?>" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-icon-notext ui-shadow-icon ui-btn-a ui-icon-delete">Delete</a>
+						<a href="index.php?view=editproduk&id=<?=$data_prodlist['id_produk'];?>" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-icon-notext ui-shadow-icon ui-btn-a ui-icon-edit">Edit</a>
+						</div>
+					</p>
 					<p class="ui-li-aside"><?=$data_prodlist['artist'];?></p>
-				</a>
 			</li>
 <?php
 	} //EOF while($data_prodlist = $prodlist->FetchRow())
 ?>
 		</ul>
 	</div><!-- /content -->
-<!-- 
-uploads/<?=$data_prodlist['image'];?>
-design/<?= $_CONFIG['templ']['main']; ?>/images/album-ag.jpg
--->
