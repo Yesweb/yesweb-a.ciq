@@ -124,6 +124,22 @@ switch($_GET['view']) {
 		include ("design/".$_CONFIG['templ']['main']."/block_design_datakolektor.php");
 	break;
 	
+	case "editcust":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_editcust.php");
+	break;
+	
+	case "editcustupdate":
+		include ("application/app_editcustupdate.php");
+	break;
+	
+	case "deletecust01":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_deletecust01.php");
+	break;
+	
+	case "deletecust02":
+		include ("application/app_deletecust02.php");
+	break;
+	
 	case "inputsup":
 		include ("design/".$_CONFIG['templ']['main']."/block_design_inputsup.php");
 	break;
