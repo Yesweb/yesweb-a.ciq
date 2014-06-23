@@ -152,6 +152,22 @@ switch($_GET['view']) {
 		include ("design/".$_CONFIG['templ']['main']."/block_design_datasup.php");
 	break;
 	
+	case "editsup":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_editsup.php");
+	break;
+	
+	case "editsupupdate":
+		include ("application/app_editsupupdate.php");
+	break;
+	
+	case "deletesup01":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_deletesup01.php");
+	break;
+	
+	case "deletesup02":
+		include ("application/app_deletesup02.php");
+	break;
+	
 	//Modul user manager
 	case "user";
 		include ("application/_usermanager/user.php");
