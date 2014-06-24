@@ -52,6 +52,7 @@ foreach ($dataTable as $i => $data) {
 						<div>
 						<a href="index.php?view=deleteproduk01&id=<?=$data['id_produk'];?>" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-icon-notext ui-shadow-icon ui-btn-a ui-icon-delete">Delete</a>
 						<a href="index.php?view=editproduk&id=<?=$data['id_produk'];?>" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-icon-notext ui-shadow-icon ui-btn-a ui-icon-edit">Edit</a>
+						<a href="index.php?view=editfoto&id=<?=$data['id_produk'];?>" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-shadow-icon ui-btn-a ui-icon-edit">Edit Foto</a>
 						</div>
 					</p>
 					<p class="ui-li-aside"><?=$data['artist'];?></p>
