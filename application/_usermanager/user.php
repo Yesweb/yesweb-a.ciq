@@ -1,4 +1,5 @@
 <a href="#" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-left">Manage User</a>
+<div class="paging">
 <?php
 //untuk menampilkan URL utama
 function baseurl() {
@@ -39,7 +40,7 @@ $dataTable = getTableData($tableQuery, $page, $dataPerPage);
 showPagination($table, $dataPerPage); 
 
 ?>
-
+</div>
 <form>
 	<input id="filterTable-input" data-type="search">
 </form>

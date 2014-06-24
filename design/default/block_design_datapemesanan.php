@@ -3,19 +3,55 @@
 	<input data-type="search" id="searchForCollapsibleSetChildren">
 </form>
 <div data-role="collapsible-set" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+<div class="paging">
 <?php
-    $sqlpesan = "
+//untuk menampilkan URL utama
+function baseurl() {
+	$act = $_GET['view']; //setting disini
+	$baseurl = "index.php?view=$act"; //setting disini
+	return $baseurl;
+}
+include_once('lib/pagination.php');
+// untuk mengetahui halaman keberapa yang sedang dibuka
+// juga untuk men-set nilai default ke halaman 1 jika tidak ada
+// data $_GET['page'] yang dikirimkan
+$page = 1;
+if (isset($_GET['page']) && !empty($_GET['page']))
+    $page = (int)$_GET['page'];
+ 
+// untuk mengetahui berapa banyak data yang akan ditampilkan
+// juga untuk men-set nilai default menjadi 10 jika tidak ada
+// data $_GET['perPage'] yang dikirimkan
+$dataPerPage = 10;
+if (isset($_GET['perPage']) && !empty($_GET['perPage']))
+    $dataPerPage = (int)$_GET['perPage'];
+ 
+// tabel yang akan dipaginasi
+$table = 'lh_penjualan';
+
+// query yang akan diambil datanya
+$tableQuery = "
 		SELECT DISTINCT lh_penjualan.id_customer,
 		lh_customer.nama AS nama
 		FROM lh_penjualan
 		LEFT JOIN lh_customer
 		ON lh_penjualan.id_customer=lh_customer.id_customer
 	";
-	$pesanlist = $db->Execute($sqlpesan);
-	while($data_pesanlist = $pesanlist->FetchRow()) {
+ 
+// ambil data
+$dataTable = getTableData($tableQuery, $page, $dataPerPage);
+ 
+// menampilkan tombol paginasi
+showPagination($table, $dataPerPage); 
+
 ?>
-	<div data-role="collapsible" data-filtertext="<?=$data_pesanlist['nama'];?>">
-		<h3><?=$data_pesanlist['nama'];?></h3>
+</div>
+<?php
+foreach ($dataTable as $i => $data) {
+	$no = ($i + 1) + (($page - 1) * $dataPerPage);
+?>
+	<div data-role="collapsible" data-filtertext="<?=$data['nama'];?>">
+		<h3><?=$data['nama'];?></h3>
 
 		<form>
 			<input id="filterTable-input" data-type="search">
@@ -34,7 +70,7 @@
 			</thead>
 			<tbody>
 <?php
-		$customerid = $data_pesanlist['id_customer'];
+		$customerid = $data['id_customer'];
 		$sqlpesan2 = "
 			SELECT *,
 			lh_invoice.invoice_number AS noinv,
@@ -68,6 +104,6 @@
 
 	</div>
 <?php
-	} //EOF while($data_pesanlist = $pesanlist->FetchRow())
+} //EOF foreach ($dataTable as $i => $data)
 ?>
 </div>

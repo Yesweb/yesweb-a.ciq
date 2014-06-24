@@ -10,6 +10,12 @@
 .listprod img {
 	top:25% !important;
 }
+.paging a {
+	margin: 4px;
+	padding: 4px 8px;
+	border: 1px solid #eaeaea;
+	text-decoration: none;
+}
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (max-width: 959px) {}
 		.margintop08 {
