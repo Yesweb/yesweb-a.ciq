@@ -130,7 +130,7 @@ $.mobile.document
 		</li>
 		<li class="ui-field-contain">
 			<label for="title">Judul:</label>
-			<input type="text" name="title" id="title" value="<?=$judul?>" data-clear-btn="true">
+			<input type="text" name="title" id="title" value="<?=htmlspecialchars($judul, ENT_QUOTES)?>" data-clear-btn="true">
 		</li>
 		<li class="ui-field-contain">
 			<label for="description">Description:</label>

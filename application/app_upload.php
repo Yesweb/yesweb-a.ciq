@@ -2,7 +2,7 @@
 <?php
 $kategori = $_POST['select-custom-2'];
 $artist = $_POST['name2'];
-$title = $_POST['title'];
+$title = addslashes($_POST['title']);
 $desc = $_POST['description'];
 $price = $_POST['price'];
 $priceUS = $_POST['priceUS'];

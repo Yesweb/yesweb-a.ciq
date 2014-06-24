@@ -1,7 +1,7 @@
 <a href="index.php?view=datasup" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-left">Edit Artist/Supplier</a>
 <?php
 $supid = $_POST['supid'];
-$nama = $_POST['name2'];
+$nama = addslashes($_POST['name2']);
 $email = $_POST['email'];
 $telp = $_POST['telp2'];
 $alamat = $_POST['textarea2'];
