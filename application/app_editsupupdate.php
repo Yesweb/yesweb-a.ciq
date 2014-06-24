@@ -7,13 +7,13 @@ $telp = $_POST['telp2'];
 $alamat = $_POST['textarea2'];
 
 	$sqlupdate = "
-		UPDATE lh_supplier
+		UPDATE `lh_supplier`
 		SET
-			nama='$nama',
-			email='$email',
-			telp='$telp',
-			alamat='$alamat'
-		WHERE id_sup='$supid'
+			`nama`='$nama',
+			`email`='$email',
+			`telp`='$telp',
+			`alamat`='$alamat'
+		WHERE `id_sup`='$supid'
 	";
 	if ($db->Execute($sqlupdate) === false) { 
         echo 'error updating: '.$db->ErrorMsg().'<BR>'; 

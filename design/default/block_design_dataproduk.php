@@ -2,7 +2,10 @@
     $sqlprod = "SELECT * FROM lh_produk ORDER BY `artist` ASC";
 	$prodlist = $db->Execute($sqlprod);
 ?>
-<a href="#" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-left">Data Produk</a>
+<a href="#" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-shop">Data Produk</a>
+<a href="#" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-navigation ui-mini">
+Data Produk
+</a>
 
 	<div role="main">
 		<ul data-role="listview" data-inset="true">
