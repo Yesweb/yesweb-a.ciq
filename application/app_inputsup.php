@@ -1,6 +1,6 @@
 <a href="index.php?view=inputsup" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-left">Input Artist</a>
 <?php
-$nama = $_GET['name2'];
+$nama = addslashes($_GET['name2']);
 $email = $_GET['email'];
 $telp = $_GET['telp2'];
 $alamat = $_GET['textarea2'];

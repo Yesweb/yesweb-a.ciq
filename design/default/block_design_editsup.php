@@ -17,7 +17,7 @@ $id = $_GET['id'];
 	<ul data-role="listview" data-inset="true">
 		<li class="ui-field-contain">
 			<label for="name2">Nama:</label>
-			<input type="text" name="name2" id="name2" value='<?=$nama?>' data-clear-btn="true">
+			<input type="text" name="name2" id="name2" value="<?=htmlspecialchars($nama, ENT_QUOTES)?>" data-clear-btn="true">
 		</li>
 		<li class="ui-field-contain">
 			<label for="email">Email:</label>
