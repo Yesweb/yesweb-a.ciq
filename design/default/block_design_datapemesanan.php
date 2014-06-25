@@ -59,7 +59,7 @@ foreach ($dataTable as $i => $data) {
 		<table data-role="table" id="movie-table" data-filter="true" data-input="#filterTable-input" class="ui-responsive">
 			<thead>
 				<tr>
-					<th data-priority="1">Order ID</th>
+					<th data-priority="1">Act</th>
 					<th data-priority="persist">Produk</th>
 					<th data-priority="2">Tanggal Pesan</th>
 					<th data-priority="3"><abbr title="Due Date">Due Date</abbr></th>
@@ -88,7 +88,9 @@ foreach ($dataTable as $i => $data) {
 		while($data_pesanlist2 = $pesanlist2->FetchRow()) {
 ?>
 				<tr>
-					<th><?=$data_pesanlist2['id_penjualan'];?></th>
+					<th>
+						<a href="index.php?view=deletepemesanan01&id=<?=$data_pesanlist2['id_penjualan'];?>" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-icon-notext ui-shadow-icon ui-btn-a ui-icon-delete">Delete</a>
+					</th>
 					<td><img style="max-width:50px; max-height:auto;" src="uploads/thumb/<?=$data_pesanlist2['image'];?>"></td>
 					<td><?=$data_pesanlist2['tanggal_pesan'];?></td>
 					<td><?=$data_pesanlist2['due_date'];?></td>

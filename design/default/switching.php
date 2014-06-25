@@ -28,6 +28,10 @@ switch($_GET['view']) {
 		include ("design/".$_CONFIG['templ']['main']."/block_design_datapemesanan.php");
 	break;
 	
+	case "deletepemesanan01":
+		include ("application/app_deletepemesanan01.php");
+	break;
+	
 	case "inputinv":
 		include ("design/".$_CONFIG['templ']['main']."/block_design_inputinv.php");
 	break;
