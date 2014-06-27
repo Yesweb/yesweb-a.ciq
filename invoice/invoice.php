@@ -4,13 +4,13 @@
 		$tahun = $tahunperinv['tahun'];
 		$terbilang = $tahunperinv['terbilang'];
 	}
-			/*Menampilkan header*/
-			$template = $db->Execute("SELECT * FROM  `lh_invoice_periode` WHERE `tahun`='$tahun'");
-			while($head = $template->FetchRow()) {
-				$hlogo = $head['logo'];
-				$hheader = $head['header'];
-				$hfooter = $head['footer'];
-			} //EOF while($head = $template->FetchRow())
+		/*Menampilkan header*/
+		$template = $db->Execute("SELECT * FROM `lh_invoice_periode` WHERE `tahun`='$tahun'");
+		while($head = $template->FetchRow()) {
+			$hlogo = $head['logo'];
+			$hheader = $head['header'];
+			$hfooter = $head['footer'];
+		} //EOF while($head = $template->FetchRow())
 ?>
 		<table width="100%" border="0">
 			<tr>
@@ -77,26 +77,47 @@
 			$sumtotal = 0;
 			$sumtotalUS = 0;
 			while($row = $rs->FetchRow()) {
-				//Rp total
+				//Rp SUB total
 				$subtotal = $row['hpam_price'];
 				$disctotal = ($subtotal / 100) * $row['discount'];
 				$total = $subtotal - $disctotal;
 				$sumtotal += $total;
 				
-				//$ total
+				//$ SUB total
 				$subtotalUS = $row['hpam_priceUS'];
 				$disctotalUS = ($subtotalUS / 100) * $row['discount'];
 				$totalUS = $subtotalUS - $disctotalUS;
 				$sumtotalUS += $totalUS;
 		?>
 			<tr class="tablecont">
-				<td class="table"><?=$row['artist'];?></td><td class="table"><img class="imgkarya" src="../uploads/thumb/<?=$row['image'];?>"></td><td class="table"><?=$row['title'];?></td><td class="table"><?=number_format($row['hpam_priceUS'], 2, '.', ',');?></td><td align="right" class="table"><?=number_format($row['hpam_price'], 0, ',', '.');?></td><td class="table"><?=number_format($row['discount'], 2, ',', '.');?></td><td align="right" class="table"><?=number_format($totalUS, 0, '.', ',');?></td><td align="right" class="table"><?=number_format($total, 0, ',', '.');?></td>
+				<td class="table"><?=$row['artist'];?></td><td class="table"><img class="imgkarya" src="../uploads/thumb/<?=$row['image'];?>"></td><td class="table"><?=$row['title'];?><br /><?=$row['description'];?></td><td class="table"><?=number_format($row['hpam_priceUS'], 0, '.', ',');?></td><td align="right" class="table"><?=number_format($row['hpam_price'], 0, ',', '.');?></td><td class="table"><?=number_format($row['discount'], 2, ',', '.');?></td><td align="right" class="table"><?=number_format($totalUS, 0, '.', ',');?></td><td align="right" class="table"><?=number_format($total, 0, ',', '.');?></td>
 			</tr>
 		<?php
 			} //EOF while($row = $rs->FetchRow())
+			
+			/* Menampilkan total DP dan total bayar */
+			$dp = $db->Execute("
+				SELECT
+					SUM(`dp`) AS totdp,
+					SUM(`dpUS`) AS totdpUS
+				FROM lh_invoice_kwitansidp
+				WHERE `id_invoice` = '$inv'
+			");
+			while($data_dp = $dp->FetchRow()) {
+				$totdp = $data_dp['totdp'];
+				$totdpUS = $data_dp['totdpUS'];
+				$totalbayar = $sumtotal - $totdp;
+				$totalbayarUS = $sumtotalUS - $totdpUS;
+			}
 		?>
 			<tr class="tablecont">
-				<td class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td class="tablecont">Total</td><td class="tablecont">&nbsp;</td><td align="right" class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td align="right" class="table"><b><?=number_format($sumtotalUS, 0, '.', ',')?></b></td><td align="right" class="table"><b><?=number_format($sumtotal, 0, ',', '.')?></b></td>
+				<td class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td class="tablecont">Sub Total</td><td class="tablecont">&nbsp;</td><td align="right" class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td align="right" class="table"><b><?=number_format($sumtotalUS, 0, '.', ',')?></b></td><td align="right" class="table"><b><?=number_format($sumtotal, 0, ',', '.')?></b></td>
+			</tr>
+			<tr class="tablecont">
+				<td class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td class="tablecont">DP</td><td class="tablecont">&nbsp;</td><td align="right" class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td align="right" class="table"><b><?=number_format($totdpUS, 0, '.', ',')?></b></td><td align="right" class="table"><b><?=number_format($totdp, 0, ',', '.')?></b></td>
+			</tr>
+			<tr class="tablecont">
+				<td class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td class="tablecont">Total</td><td class="tablecont">&nbsp;</td><td align="right" class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td align="right" class="table"><b><?=number_format($totalbayarUS, 0, '.', ',')?></b></td><td align="right" class="table"><b><?=number_format($totalbayar, 0, ',', '.')?></b></td>
 			</tr>
 		</table>
 		

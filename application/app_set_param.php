@@ -1,7 +1,8 @@
 <?php
-	//Parameter artjog
+	//Parameter artjog existing
 	$invoicetemplate = "INV/ARTWORK/ARTJOG14/";
 	$kwitansitemplate = "REC/ARTWORK/ARTJOG14/";
+	$kwitansitemplateDP = "REC/ARTWORK/ARTJOG14/DP/";
 	
 	
 	$code81 = "81:Anda berhasil melakukan checkin, silahkan masuk."; //

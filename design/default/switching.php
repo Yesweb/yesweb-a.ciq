@@ -116,12 +116,36 @@ switch($_GET['view']) {
 		include ("application/app_editinvstat.php");
 	break;
 	
+	case "kwitansi":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_kwitansi.php");
+	break;
+	
 	case "editkwi":
 		include ("design/".$_CONFIG['templ']['main']."/block_design_editkwi.php");
 	break;
 	
 	case "editkwiinsert":
 		include ("application/app_editkwiinsert.php");
+	break;
+	
+	case "kwitansidp":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_kwitansidp.php");
+	break;
+	
+	case "addkwidp":
+		include ("application/app_addkwidp.php");
+	break;
+	
+	case "editkwidp":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_editkwidp.php");
+	break;
+	
+	case "kwidpupdate":
+		include ("application/app_kwidpupdate.php");
+	break;
+	
+	case "deletedp":
+		include ("application/app_deletedp.php");
 	break;
 	
 	case "inputkolektor":

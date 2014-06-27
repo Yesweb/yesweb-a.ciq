@@ -51,8 +51,7 @@ showPagination($table, $dataPerPage);
             <th data-priority="persist">Nomor Invoice</th>
             <th data-priority="2">Tahun Invoice</th>
             <th data-priority="3">Status Invoice</th>
-            <th data-priority="4">Terbilang</th>
-            <th data-priority="5">Nomor Kwitansi</th>
+            <th data-priority="4">Kwitansi</th>
         </tr>
 	</thead>
 	<tbody>
@@ -64,13 +63,14 @@ foreach ($dataTable as $i => $data) {
 			<td><a href="#" data-rel="external"><?=$data['invoice_number'];?></a></td>
 			<td><?=$data['tahun'];?></td>
 			<td><a href="index.php?view=editinvstat&id=<?=$data['id_invoice'];?>&inv=<?=$data['invoice_number'];?>&stat=<?=$data['status'];?>"><?=$data['status'];?></a></td>
-			<td><?=$data['terbilang'];?></td>
 			<td>
 <?php
 		if ($data['invoice_status'] == 3) {
-			echo "<a href='index.php?view=editkwi&id=".$data['id_invoice']."&inv=".$data['invoice_number']."&kwi=".$data['kwitansi']."'>".$data['kwitansi']."</a>";
+			echo "
+			<a href='index.php?view=kwitansi&id=".$data['id_invoice']."' class='ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-inline ui-btn-icon-notext'>".$data['kwitansi']."</a>
+			";
 		} else {
-			echo $data['kwitansi'];
+			echo "<a href='#' class='ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-inline ui-btn-icon-notext'>No Kwitansi</a>";
 		}
 ?>
 			</td>

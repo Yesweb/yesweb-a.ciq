@@ -11,5 +11,9 @@ switch($_GET['view']) {
 	case "receipt":
 		include ("receipt.php");
 	break;
+	
+	case "receiptdp":
+		include ("receiptdp.php");
+	break;
 }
 ?>
