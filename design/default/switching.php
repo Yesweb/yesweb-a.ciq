@@ -116,6 +116,14 @@ switch($_GET['view']) {
 		include ("application/app_editinvstat.php");
 	break;
 	
+	case "confdeleteinv":
+		include ("design/".$_CONFIG['templ']['main']."/block_design_confdeleteinv.php");
+	break;
+	
+	case "deleteinv":
+		include ("application/app_deleteinv.php");
+	break;
+	
 	case "kwitansi":
 		include ("design/".$_CONFIG['templ']['main']."/block_design_kwitansi.php");
 	break;

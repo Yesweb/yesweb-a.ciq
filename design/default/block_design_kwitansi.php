@@ -49,6 +49,12 @@ showPagination($table, $dataPerPage);
 	while($data_del = $del->FetchRow()) {
 		$delete = $data_del['id'];
 	}
+	
+    $sqldelpenj = "SELECT * FROM `lh_penjualan` WHERE `invoice_number`='$idinv'";
+	$delpenj = $db->Execute($sqldelpenj);
+	while($data_delpenj = $delpenj->FetchRow()) {
+		$deletepenj = $data_delpenj['id_penjualan'];
+	}
 ?>
 </div>
 
@@ -83,8 +89,8 @@ foreach ($dataTable as $i => $data) {
 			</td>
 			<td>
 <?php
-				if (empty($delete)) {
-					echo '<a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-notext ui-btn-a ui-mini ui-icon-delete">Delete</a>';
+				if (empty($delete) && empty($deletepenj)) {
+					echo '<a href="index.php?view=confdeleteinv&id='.$data['id_invoice'].'" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-notext ui-btn-a ui-mini ui-icon-delete">Delete</a>';
 				} else {
 					echo '&nbsp';
 				}
