@@ -2,7 +2,7 @@
 //db set
 $_CONFIG['db']['host']		= "localhost";
 $_CONFIG['db']['user']		= "root";
-$_CONFIG['db']['pass']		= "bandung";
+$_CONFIG['db']['pass']		= "123456";
 $_CONFIG['db']['dbname']	= "hpam_penjualan";
 
 //Set Template
