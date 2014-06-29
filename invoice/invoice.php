@@ -117,7 +117,7 @@
 				<td class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td class="tablecont">DP</td><td class="tablecont">&nbsp;</td><td align="right" class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td align="right" class="table"><b><?=number_format($totdpUS, 0, '.', ',')?></b></td><td align="right" class="table"><b><?=number_format($totdp, 0, ',', '.')?></b></td>
 			</tr>
 			<tr class="tablecont">
-				<td class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td class="tablecont">Total</td><td class="tablecont">&nbsp;</td><td align="right" class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td align="right" class="table"><b><?=number_format($totalbayarUS, 0, '.', ',')?></b></td><td align="right" class="table"><b><?=number_format($totalbayar, 0, ',', '.')?></b></td>
+				<td class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td class="tablecont">Total Due</td><td class="tablecont">&nbsp;</td><td align="right" class="tablecont">&nbsp;</td><td class="tablecont">&nbsp;</td><td align="right" class="table"><b><?=number_format($totalbayarUS, 0, '.', ',')?></b></td><td align="right" class="table"><b><?=number_format($totalbayar, 0, ',', '.')?></b></td>
 			</tr>
 		</table>
 		

@@ -43,6 +43,12 @@ $dataTable = getTableData($tableQuery, $page, $dataPerPage);
 // menampilkan tombol paginasi
 showPagination($table, $dataPerPage); 
 
+//Menampilkan tombol delete Kwitansi dan Invoice
+    $sqldel = "SELECT * FROM `lh_invoice_kwitansidp` WHERE `id_invoice`='$idinv'";
+	$del = $db->Execute($sqldel);
+	while($data_del = $del->FetchRow()) {
+		$delete = $data_del['id'];
+	}
 ?>
 </div>
 
@@ -76,7 +82,14 @@ foreach ($dataTable as $i => $data) {
 ?>
 			</td>
 			<td>
-				<a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-notext ui-btn-a ui-mini ui-icon-delete">Delete</a>
+<?php
+				if (empty($delete)) {
+					echo '<a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-notext ui-btn-a ui-mini ui-icon-delete">Delete</a>';
+				} else {
+					echo '&nbsp';
+				}
+?>
+				
 			</td>
 		</tr>
 <?php
