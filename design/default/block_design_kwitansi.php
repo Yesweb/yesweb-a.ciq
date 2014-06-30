@@ -80,7 +80,7 @@ foreach ($dataTable as $i => $data) {
 			<td><?=$data['tgl_bayar'];?></td>
 			<td>
 <?php
-		if ($data['invoice_status'] == 3) {
+		if ($data['invoice_status'] == 3 or $data['invoice_status'] == 2) {
 			echo "<a href='index.php?view=editkwi&id=".$data['id_invoice']."&inv=".$data['invoice_number']."&kwi=".$data['kwitansi']."&tgl=".$data['tgl_bayar']."'>".$data['kwitansi']."</a>";
 		} else {
 			echo $data['kwitansi'];

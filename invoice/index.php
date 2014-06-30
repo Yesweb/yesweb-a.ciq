@@ -1,6 +1,6 @@
 <?php
 	include ("../cek_login.php");
-	include ("config.php");	
+	include ("config.php");
 	$inv = $_GET['idv'];
 ?>
 <html>

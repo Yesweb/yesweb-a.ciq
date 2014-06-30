@@ -212,6 +212,18 @@ switch($_GET['view']) {
 		include ("application/app_deletesup02.php");
 	break;
 	
+	case "rekap01":
+		include ("application/exportdata/app_rekap01.php");
+	break;
+	
+	case "rekap02":
+		include ("application/exportdata/app_rekap02.php");
+	break;
+	
+	case "rekapsingle":
+		include ("application/exportdata/app_rekapsingle.php");
+	break;
+	
 	//Modul user manager
 	case "user";
 		include ("application/_usermanager/user.php");
