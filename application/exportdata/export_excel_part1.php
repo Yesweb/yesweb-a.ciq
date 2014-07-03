@@ -107,14 +107,14 @@ header("Content-Disposition: attachment; filename=rekap_penjualan_artjog".$tahun
 				<td><img src="http://173.45.230.176/yesweb-a.ciq/uploads/thumb/<?=$data_exp['image']?>"></td>
 				<td><?=$data_exp['title']?><br /><?=$data_exp['description']?></td>
 				<td><?=$data_exp['stat_name']?></td>
-				<td><?=number_format($data_exp['idr_artist_price'], 0, ',', '.')?></td>
-				<td><?=number_format($data_exp['usd_artist_price'], 0, ',', '.')?></td>
-				<td><?=number_format($data_exp['idr_hpam_price'], 0, ',', '.')?></td>
-				<td><?=number_format($data_exp['usd_hpam_price'], 0, ',', '.')?></td>
+				<td><?=number_format($data_exp['idr_artist_price'], 0, ',', '')?></td>
+				<td><?=number_format($data_exp['usd_artist_price'], 0, ',', '')?></td>
+				<td><?=number_format($data_exp['idr_hpam_price'], 0, ',', '')?></td>
+				<td><?=number_format($data_exp['usd_hpam_price'], 0, ',', '')?></td>
 				<td><?=$data_exp['buyer']?></td>
-				<td><?=number_format($data_exp['discount'], 2, ',', '.')?></td>
-				<td><?=number_format($data_exp['idr_invoice'], 0, ',', '.')?></td>
-				<td><?=number_format($data_exp['usd_invoice'], 0, ',', '.')?></td>
+				<td><?=number_format($data_exp['discount'], 2, ',', '')?></td>
+				<td><?=number_format($data_exp['idr_invoice'], 0, ',', '')?></td>
+				<td><?=number_format($data_exp['usd_invoice'], 0, ',', '')?></td>
 				<td><?=$data_exp['invoice_number']?></td>
 				<td><?=$data_exp['kwitansi']?></td>
 				<td><?=$data_exp['status']?></td>

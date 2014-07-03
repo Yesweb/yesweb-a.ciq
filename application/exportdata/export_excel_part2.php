@@ -69,8 +69,8 @@ header("Content-Disposition: attachment; filename=rekap_downpayment_artjog".$tah
 				<td><?=$data_exp['invoice_number']?></td>
 				<td><?=$data_exp['kwitansi']?></td>
 				<td><?=$data_exp['kwitansi_dp']?></td>
-				<td><?=number_format($data_exp['idr_dp'], 0, ',', '.')?></td>
-				<td><?=number_format($data_exp['usd_dp'], 0, ',', '.')?></td>
+				<td><?=number_format($data_exp['idr_dp'], 0, ',', '')?></td>
+				<td><?=number_format($data_exp['usd_dp'], 0, ',', '')?></td>
 			</tr>
 <?php
 	} //EOF while($data_exp = $exp->FetchRow())
