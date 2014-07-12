@@ -37,17 +37,22 @@ header("Content-Disposition: attachment; filename=rekap_penjualan_artjog".$tahun
 				<th>Image</th>
 				<th>Description</th>
 				<th>Artwork Status</th>
-				<th colspan="2">Harga Seniman</th>
-				<th colspan="2">Harga HPAM</th>
+				<th>Harga Seniman</th>
+				<th>Harga Seniman</th>
+				<th>Harga HPAM</th>
+				<th>Harga HPAM</th>
 				<th>Buyer</th>
 				<th>Discount (%)</th>
-				<th colspan="2">Harga Invoice</th>
+				<th>Harga Invoice</th>
+				<th>Harga Invoice</th>
 				<th>No. Invoice</th>
 				<th>No. Receipt</th>
 				<th>Status Pembayaran</th>
 				<th>No. Kwitansi DP</th>
-				<th colspan="2">DP</th>
-				<th colspan="2">Total Due</th>
+				<th>DP</th>
+				<th>DP</th>
+				<th>Total Due</th>
+				<th>Total Due</th>
 			</tr>
 			<tr>
 				<th>&nbsp;</th>

@@ -36,7 +36,8 @@ header("Content-Disposition: attachment; filename=rekap_downpayment_artjog".$tah
 				<th>Nomor Invoice</th>
 				<th>Nomor Kwitansi Pelunasan</th>
 				<th>Nomor Kwitansi DP</th>
-				<th colspan="2">Down Payment</th>
+				<th>Down Payment</th>
+				<th>Down Payment</th>
 			</tr>
 			<tr>
 				<th>&nbsp;</th>
