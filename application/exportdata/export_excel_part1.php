@@ -108,7 +108,7 @@ header("Content-Disposition: attachment; filename=rekap_penjualan_artjog".$tahun
 			<tr>
 				<td><?=$data_exp['artist']?></td>
 				<td><img src="http://173.45.230.176/yesweb-a.ciq/uploads/thumb/<?=$data_exp['image']?>"></td>
-				<td><?=$data_exp['title']?><br /><?=$data_exp['description']?></td>
+				<td><?=$data_exp['title']?>, <?=$data_exp['description']?></td>
 				<td><?=$data_exp['stat_name']?></td>
 				<td><?=number_format($data_exp['idr_artist_price'], 0, ',', '')?></td>
 				<td><?=number_format($data_exp['usd_artist_price'], 0, ',', '')?></td>

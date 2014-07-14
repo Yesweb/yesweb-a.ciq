@@ -47,13 +47,13 @@
 				</td>
 			</tr>
 			<tr>
-				<td align="right" class="default">Date :</td><td align="left" class="default"><?=$data['tanggal_pesan'];?></td>
+				<td align="right" class="default">Date :</td><td align="left" class="default"><?=date('d F Y', strtotime($data['tanggal_pesan']))?></td>
 			</tr>
 			<tr>
-				<td align="right" class="default">Invoice No. :</td><td align="left" class="default"><?=$data['invoice'];?></td>
+				<td align="right" class="default">Invoice No. :</td><td align="left" class="default"><?=$data['invoice']?></td>
 			</tr>
 			<tr>
-				<td align="right" class="default">Due Date :</td><td align="left" class="default"><?=$data['due_date'];?></td>
+				<td align="right" class="default">Due Date :</td><td align="left" class="default"><?=date('d F Y', strtotime($data['due_date']))?></td>
 			</tr>
 		</table>
 		<?php

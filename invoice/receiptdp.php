@@ -52,7 +52,7 @@ $idkw = $_GET['idkw'];
 				</td>
 			</tr>
 			<tr>
-				<td align="right" class="default">Date :</td><td align="left" class="default"><?=$data['tgl_bayar'];?></td>
+				<td align="right" class="default">Date :</td><td align="left" class="default"><?=date('d F Y', strtotime($data['tgl_bayar']))?></td>
 			</tr>
 			<tr>
 				<td align="right" class="default">Receipt No. :</td><td align="left" class="default"><?=$data['kwitansi'];?></td>
